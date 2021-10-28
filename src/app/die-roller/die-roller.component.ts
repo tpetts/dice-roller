@@ -19,10 +19,12 @@ export class DieRollerComponent implements OnInit {
 
   roll = () => {
     this.rollValue = Math.floor(Math.random() * Number(this.sideCount)) + 1;
+    this.dieRolledEventEmitter.emit(this.rollValue);
   }
 
   //decorators are supposed to decorate something
-  @Output()
+  @Output("die-rolled")
   dieRolledEventEmitter = new EventEmitter<number>();
+
 
 }
