@@ -14,6 +14,10 @@ export class DieRollerComponent implements OnInit {
 
   sideCount = "6";
 
-  rollValue = 6;
+  rollValue = 0;
+
+  roll = () => {
+    this.rollValue = Math.floor(Math.random() * 6) + 1;
+  }
 
 }
