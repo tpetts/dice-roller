@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-die-roller',
@@ -20,5 +20,9 @@ export class DieRollerComponent implements OnInit {
   roll = () => {
     this.rollValue = Math.floor(Math.random() * Number(this.sideCount)) + 1;
   }
+
+  //decorators are supposed to decorate something
+  @Output()
+  dieRolledEventEmitter = new EventEmitter<number>();
 
 }
